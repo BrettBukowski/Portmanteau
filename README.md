@@ -4,7 +4,18 @@ Portmanteau
 A collection of handy, non-obtrusive, non-script downloading, non-analytics-inserting bookmarklets.
 
 
-## License
+
+## Installation
+
+1. Go in and copy the contents of any of the -min.js files.
+2. Bookmark this page (or any page) to create a bookmark.
+3. Right-click the bookmark to edit.
+4. Give it any name you want.
+5. Clear out the URL, type `javascript:` and paste in the contents of the -min.js file. 
+
+![][https://dl.dropbox.com/u/302368/github/bookmark.jpg]
+
+### License
 
 Copyright (c) 2013 Brett Bukowski
 
