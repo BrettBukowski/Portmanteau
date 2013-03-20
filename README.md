@@ -13,7 +13,7 @@ A collection of handy, non-obtrusive, non-script downloading, non-analytics-inse
 4. Give it any name you want.
 5. Clear out the URL, type `javascript:` and paste in the contents of the -min.js file. 
 
-![][https://dl.dropbox.com/u/302368/github/bookmark.jpg]
+![][bookmark]
 
 ### License
 
@@ -26,3 +26,6 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+[bookmark]: https://dl.dropbox.com/u/302368/github/bookmark.jpg
