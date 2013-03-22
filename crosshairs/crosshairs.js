@@ -36,7 +36,8 @@
       height: '1px',
       left:    0,
       right:   0,
-      borderWidth: '1px 0'
+      borderTop: '1px solid #FFF',
+      borderBottom: '1px solid #FFF'
     }));
     setStyles(horizontal, { top: y + 'px' });
   }
@@ -45,11 +46,13 @@
     vertical || (vertical = createLine({
       width: '1px',
       top:    '0px',
-      borderWidth: '0 1px'
+      borderWidth: '0 1px',
+      borderLeft: '1px solid #FFF',
+      borderRight: '1px solid #FFF'
     }));
     setStyles(vertical, {
       left: x + 'px',
-      bottom: (doc.body.scrollHeight - doc.body.clientHeight) * -1 + 'px'
+      height: doc.body.offsetHeight + 'px'
     });
   }
 
@@ -75,10 +78,10 @@
 
     setStyles(line, mix(styles, {
       background: '#000',
-      border:     '1px solid #FFF',
       margin:     0,
       padding:    0,
-      position:   'absolute'
+      position:   'absolute',
+      zIndex:     99
     }));
 
     return doc.body.appendChild(line);
