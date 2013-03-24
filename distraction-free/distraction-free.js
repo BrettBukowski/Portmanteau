@@ -77,7 +77,7 @@
   function pumpUpVids (vids) {
     each(vids, function (el) {
       relativize(el);
-      setStyles(el, { zIndex: max, position: 'absolute' });
+      setStyles(el, { zIndex: max, position: 'absolute', left: 0 });
     });
   }
 
@@ -90,7 +90,7 @@
     });
   }
 
-  var vids = arrayize($$('video'));
+  var vids = arrayize($$('video,object,embed'));
   if (vids.length) {
     pumpUpVids(vids);
 
