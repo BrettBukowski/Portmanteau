@@ -3,8 +3,6 @@ Portmanteau
 
 A collection of handy, non-obtrusive, non-script downloading, non-analytics-inserting bookmarklets.
 
-
-
 ## Installation
 
 1. Go in and copy the contents of any of the -min.js files.
@@ -15,7 +13,49 @@ A collection of handy, non-obtrusive, non-script downloading, non-analytics-inse
 
 ![][bookmark]
 
-### License
+## The Bookmarklets
+
+### Crosshairs
+
+Pull up some crosshairs in order to get some precise pixel coordinates.
+
+![][crosshairs]
+
+### Darken
+
+Darken the page by applying a dark background and light text color. This one's kinda hit or miss depending on how a site is styled.
+
+![][darken]
+
+### Distraction-Free
+
+Sometimes you don't want to watch a video in full screen mode, but the rest of the content on the page is distracting if you leave it small. Hide that distracting content!
+
+![][distraction-free]
+
+Tested on Vimeo and YouTube.
+
+### Font Inspector
+
+Hover over some text to see what font's being used.
+
+![][font-inspector]
+
+### HTML5 Video Playback Speed
+
+Add a slider to HTML5 videos in order to control playback speed.
+
+![][slider]
+
+Tested on Vimeo, YouTube, and TED.
+
+### Remove CSS
+
+Kills the CSS on the page.
+
+![][css]
+
+## License
 
 Copyright (c) 2013 Brett Bukowski
 
@@ -29,3 +69,10 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 
 [bookmark]: https://dl.dropbox.com/u/302368/github/bookmark.jpg
+[crosshairs]: https://dl.dropbox.com/u/302368/github/crosshairs.png
+[darken]: https://dl.dropbox.com/u/302368/github/darken.png
+[distraction-free]: https://dl.dropbox.com/u/302368/github/distraction-free.png
+[font-inspector]: https://dl.dropbox.com/u/302368/github/font-inspector.png
+[slider]: https://dl.dropbox.com/u/302368/github/slider.png
+[css]: https://dl.dropbox.com/u/302368/github/css.png
+
