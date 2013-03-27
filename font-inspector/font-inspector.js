@@ -9,8 +9,10 @@
     }
   }
 
-  function mix (receiver, sender) {
+  function mix (receiver, sender, overwrite) {
     for (var i in sender) {
+      if (!overwrite && i in receiver) continue;
+
       receiver[i] = sender[i];
     }
 
@@ -39,7 +41,8 @@
     padding: '6px',
     position: 'absolute',
     textDecoration: 'none',
-    textShadow: '0 1px rgba(255, 255, 255, .4)'
+    textShadow: '0 1px rgba(255, 255, 255, .4)',
+    zIndex: 100000
   };
 
   function Ingress (infoCard) {
@@ -50,7 +53,7 @@
   Ingress.prototype = {
     enter: function() {
         this.callback = bind(this, this.mouseOver);
-        doc.body.addEventListener('mouseover', this.callback);
+        doc.body.addEventListener('mousemove', this.callback);
 
         var ex = doc.createElement('a');
         ex.href = '#';
@@ -58,6 +61,7 @@
         setStyles(ex, mix({
           top: '10px',
           right: '10px',
+          position: 'fixed'
         }, commonStyles));
         ex.addEventListener('click', bind(this, function(e) {
           e.preventDefault();
@@ -69,18 +73,17 @@
     exit: function(e) {
         this.exitButton.parentNode.removeChild(this.exitButton);
         this.infoCard.destroy();
-        doc.body.removeEventListener('mouseover', this.callback);
+        doc.body.removeEventListener('mousemove', this.callback);
     },
     mouseOver: function (e) {
-      var x = e.clientX,
-          y = e.clientY;
+      var x = e.clientX + doc.body.scrollLeft,
+          y = e.clientY + doc.body.scrollTop;
 
-      this.infoCard.moveTo(x + 20, y + 20);
-      var font = this.getFontAtPoint(x, y);
-      this.infoCard.setContent(font);
+      this.infoCard.moveTo(x + 10, y + 10)
+                   .setContent(this.getFontAtPoint(x, y));
     },
     getFontAtPoint: function (x, y) {
-      var el = doc.elementFromPoint(x, y),
+      var el = doc.elementFromPoint(x, y) || doc.body,
           font = window.getComputedStyle(el).getPropertyValue('font-family');
 
       if (el.tagName === 'IMG') {
@@ -98,7 +101,7 @@
     _create: function() {
       var card = doc.createElement('div');
       setStyles(card, mix({
-        display: 'none',
+        display: 'none'
       }, commonStyles));
 
       return doc.body.appendChild(card);
@@ -106,10 +109,14 @@
 
     moveTo: function(x, y) {
       setStyles(this.card, {display: 'block', left: x + 'px', top: y + 'px' });
+
+      return this;
     },
 
     setContent: function(content) {
       this.card.innerHTML = content;
+
+      return this;
     },
 
     destroy: function() {
