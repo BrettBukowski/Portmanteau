@@ -55,6 +55,12 @@ Kills the CSS on the page.
 
 ![][css]
 
+### What Audio
+
+If there's an `audio` element playing something on the page, surface its `src`.
+
+![][audio]
+
 ## License
 
 Copyright (c) 2013 Brett Bukowski
@@ -75,4 +81,4 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 [font-inspector]: https://dl.dropbox.com/u/302368/github/font-inspector.png
 [slider]: https://dl.dropbox.com/u/302368/github/slider.png
 [css]: https://dl.dropbox.com/u/302368/github/css.png
-
+[audio]: https://dl.dropboxusercontent.com/u/302368/github/audio.png
