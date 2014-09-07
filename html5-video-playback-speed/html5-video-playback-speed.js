@@ -12,7 +12,7 @@
 // [Leif Wickland's](http://leifw.wickland.net/2013/03/truly-variable-rate-video-playback-in.html)
 // bookmarklet.
 //
-// Tested on YouTube's, Vimeo's and TED's HTML5 video players
+// Tested on YouTube's and Vimeo's HTML5 video players
 //
 // ＼(＾O＾)／＼(＾O＾)／＼(＾O＾)／
 //
@@ -60,18 +60,29 @@
   });
 
   div.appendChild(label);
+  div.addEventListener('mouseover', function (e) {e.currentTarget.style.opacity = 1;});
+  div.addEventListener('mouseout', function (e) {e.currentTarget.style.opacity = 0.2;});
 
   if (parent = doc.querySelector('.html5-player-chrome')) {
+    // youtube
     parent.appendChild(div);
     setStyles(div, { left: '35%' });
+  }
+  else if (parent = doc.querySelector('#clip')) {
+    // vimeo
+    parent.appendChild(div);
+    setStyles(div, { top: 0 });
   }
   else {
     vid.parentNode.insertBefore(div, vid);
   }
 
-  range.addEventListener('change', function(e) {
+  function onChange (e) {
     var newVal = e.target.value;
     vid.playbackRate = newVal;
     label.querySelector('.asdf').innerHTML = newVal + 'x';
-  });
+  }
+
+  range.addEventListener('input', onChange);
+  range.addEventListener('change', onChange);
 }(document);
